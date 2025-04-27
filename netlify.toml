@@ -1,0 +1,5 @@
+[build]
+  # No build command needed for static sites
+  command = ""
+  # Directory containing the website files
+  publish = "invean-html/"

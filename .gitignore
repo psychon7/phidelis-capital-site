@@ -1,0 +1,17 @@
+# macOS specific
+.DS_Store
+
+# VSCode specific
+.vscode/
+
+# Log files
+*.log
+
+# Dependency directories (common but maybe not needed here)
+node_modules/
+bower_components/
+
+# Build output directories (common)
+build/
+dist/
+public/

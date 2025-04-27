@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/fav.png">
+    <title>Phidelis Capital</title>
+    <link rel="stylesheet" href="assets/css/plugins/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/plugins/swiper.css">
+    <link rel="stylesheet" href="assets/css/plugins/metismenu.css">
+    <link rel="stylesheet" href="assets/css/plugins/magnifying-popup.css">
+    <link rel="stylesheet" href="assets/css/plugins/odometer.css">
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Add basic inline styles for sections not in original template -->
+    <style>
+        .phidelis-cta-dark {
+            background-color: #002366; /* Dark Blue */
+            color: #FFFFFF;
+            padding: 60px 0;
+        }
+        .phidelis-cta-dark h2 {
+            color: #FFC107; /* Yellow */
+            margin-bottom: 20px;
+        }
+        .phidelis-cta-dark .rts-btn {
+             background-color: #FFC107;
+             border-color: #FFC107;
+             color: #002366; /* Dark blue text */
+        }
+         .phidelis-content-light {
+            background-color: #EAF2FF; /* Light Blue */
+            padding: 60px 0;
+         }
+          .phidelis-content-light h2 {
+             color: #002366; /* Dark Blue */
+         }
+         .phidelis-content-light p {
+             color: #333; /* Adjust text color as needed */
+         }
+        .phidelis-product-card {
+            background: #FFFFFF;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .phidelis-product-card img {
+            max-width: 100%;
+            height: 150px; /* Fixed height for consistency */
+            object-fit: cover;
+            margin-bottom: 15px;
+             border-radius: 5px;
+        }
+         .phidelis-product-card h5 {
+            color: #002366;
+            margin-top: 10px;
+         }
+         /* Ensure two-column layout aligns items vertically */
+         .two-col-section .row {
+             align-items: center;
+         }
+         .two-col-section .content-column {
+             padding-left: 30px; /* Add some spacing */
+         }
+         @media (max-width: 991px) {
+            .two-col-section .content-column {
+                 padding-left: 15px;
+                 margin-top: 30px;
+            }
+         }
+        .header-five {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 10px 0;
+        }
+
+        .main-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+
+        .nav-area {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-area ul {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-area .nav-link {
+            color: #333;
+            font-size: 16px;
+            font-weight: 500;
+            text-decoration: none;
+            padding: 8px 0;
+            transition: color 0.3s ease;
+        }
+
+        .nav-area .nav-link:hover {
+            color: #002366;
+        }
+
+        .logo-container img {
+            height: 40px;
+            width: auto;
+        }
+
+        /* Add padding to body to account for fixed header */
+        body {
+            padding-top: 90px;
+        }
+
+        /* Make the menu button more visible on mobile */
+        @media (max-width: 991px) {
+            .menu-btn {
+                display: block;
+                font-size: 24px;
+                color: #333;
+                background: none;
+                border: none;
+                cursor: pointer;
+            }
+            
+            .nav-area {
+                display: none;
+            }
+        }
+
+        .menu-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #333;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .menu-btn:hover {
+            color: #002366;
+        }
+
+        .thumbnail-logo {
+            display: block;
+            padding: 10px 0;
+        }
+
+        /* Ensure header stays at top when sticky */
+        .header--sticky.sticky {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            animation: slideDown 0.5s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(108, 117, 125, 0.8), rgba(108, 117, 125, 0.8)),
+                        url('assets/images/banner/placeholder_city.jpg') center/cover;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            padding: 120px 0;
+        }
+
+        .hero-content .title {
+            font-size: 64px;
+            line-height: 1.2;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 24px;
+        }
+
+        .hero-content .subtitle {
+            font-size: 24px;
+            color: #ffffff;
+            margin-bottom: 40px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 32px;
+            background-color: #FFC107;
+            color: #002366;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #FFD54F;
+            transform: translateY(-2px);
+            color: #002366;
+        }
+
+        @media (max-width: 991px) {
+            .hero-content .title {
+                font-size: 48px;
+            }
+            .hero-content .subtitle {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hero-content .title {
+                font-size: 36px;
+            }
+            .hero-content {
+                padding: 80px 0;
+            }
+        }
+
+        .service-icon-circle {
+            width: 100px;
+            height: 100px;
+            background: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px auto;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .service-icon-circle i {
+            font-size: 48px;
+            color: #002366;
+        }
+        .product-card-bg {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            height: 320px;
+            display: flex;
+            align-items: flex-end;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.10);
+            padding: 0;
+            margin-bottom: 0;
+        }
+        .product-card-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(180deg, rgba(0,35,102,0.7) 60%, rgba(0,35,102,0.9) 100%);
+            z-index: 1;
+        }
+        .product-card-title {
+            position: absolute;
+            top: 24px;
+            left: 0; right: 0;
+            text-align: center;
+            color: #fff;
+            font-size: 2rem;
+            font-weight: 700;
+            z-index: 2;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+        }
+        .product-card-desc {
+            position: absolute;
+            left: 0; right: 0;
+            bottom: 32px;
+            z-index: 2;
+            color: #fff;
+            font-size: 1.7rem;
+            font-weight: 400;
+            text-align: center;
+            padding: 0 18px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+            line-height: 1.5;
+        }
+        .footer-two-single-wized.two {
+            padding-left: 60px; /* Adjust this value to move more/less to the right */
+        }
+        .wized-2-body ul {
+            padding-left: 20px; /* Adjust internal padding of the links */
+        }
+        .wized-title-area {
+            padding-left: 20px; /* Match with the ul padding */
+        }
+    </style>
+</head>
+
+<body class="index-five onepage">
+    <div class="loader-wrapper">
+        <div class="loader">
+        </div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="header-five">
+        <div class="container">
+            <div class="main-header">
+                <!-- Logo -->
+                <div class="logo-container">
+                    <a href="index.html">
+                        <img src="assets/images/logo/phidelis_logo_placeholder.svg" alt="Phidelis Capital Logo">
+                    </a>
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="nav-area">
+                    <ul>
+                        <li><a href="#home" class="nav-link">Home</a></li>
+                        <li><a href="#about" class="nav-link">About us</a></li>
+                        <li><a href="#service" class="nav-link">Our Services</a></li>
+                        <li><a href="#products" class="nav-link">Products</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button class="menu-btn d-xl-none">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Hero Section -->
+    <div class="hero-section" id="home" style="background-image: url('assets/images/beautiful-architecture-building-exterior-cityscape-2024-09-16-09-31-29-utc.JPG'); background-size: cover; background-position: center; position: relative;">
+        <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 35, 102, 0.7);"></div>
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-7">
+                    <div class="hero-content" style="position: relative; z-index: 1;">
+                        <h1 class="title" style="color: #FFFFFF;">
+                            Bespoke Wealth<br>
+                            Solutions with Ethics<br>
+                            at the Core
+                        </h1>
+                        <p class="subtitle" style="color: #FFFFFF;">
+                            An independent advisory firm and multi-family office from Singapore.
+                        </p>
+                        <a href="#contact" class="cta-button" style="background-color: #FFC107; color: #002366; border: none; padding: 12px 30px; border-radius: 4px; text-decoration: none; display: inline-block; margin-top: 20px;">Schedule a Consultation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero Section End -->
+
+
+    <!-- About Section ("Welcome") -->
+    <div class="rts-about-five-area rts-section-gap two-col-section" id="about"> <!-- Added two-col-section class -->
+        <div class="container">
+            <div class="row align-items-center">
+                 <!-- Image Column (Placeholder for Pie Chart) -->
+                <div class="col-lg-6">
+                    <div class="thumbnail-about-five text-center">
+                        <img src="assets/images/Diagram 10.png" alt="Financial Chart Graphic" style="max-width: 80%;"> <!-- Placeholder Image -->
+                    </div>
+                </div>
+                 <!-- Text Column -->
+                <div class="col-lg-6 content-column"> <!-- Added content-column class -->
+                    <div class="about-content-inner-five">
+                        <div class="title-style-five">
+                            <h2 class="title rts-text-anime-style-1">Welcome to Phidelis Capital</h2>
+                        </div>
+                        <div class="inner-about-home-7">
+                            <p class="disc">
+                                Phidelis Capital has been conceived to deliver high quality, objective & ethical asset management solutions & advice. An amalgam of Fidelis, the Latin word for faith & loyalty; and Phi, the Greek symbol that mathematically represents the golden ratio of harmonious proportions, 'Phidelis' blends together these core values in its fundamental essence.
+                            </p>
+                             <!-- Removed embedded CTA -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About Section End -->
+
+
+    <!-- Services Section (6 items) -->
+    <div class="rts-service-area rts-section-gapBottom" id="service">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-style-five center">
+                        <h2 class="title">Our Services</h2>
+                    </div>
+                </div>
+            </div>
+             <!-- First row of services with Font Awesome icons -->
+            <div class="row g-5 mt--10">
+                <div class="col-lg-4 col-md-6 col-sm-12" data-animation="fadeInUp" data-delay="0.0" data-duration="1.2">
+                    <div class="service-single-main-wrapper-five">
+                        <div class="icon service-icon-circle"><i class="fa-solid fa-hands-holding-dollar"></i></div>
+                        <div class="inner-content">
+                            <h5 class="title">Wealth Management</h5>
+                            <p class="disc">Personalized strategies to grow and preserve your wealth for long-term financial security.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12" data-animation="fadeInUp" data-delay="0.2" data-duration="1.2">
+                    <div class="service-single-main-wrapper-five">
+                        <div class="icon service-icon-circle"><i class="fa-solid fa-chart-line"></i></div>
+                        <div class="inner-content">
+                            <h5 class="title">Investment Advisory</h5>
+                            <p class="disc">Expert guidance on investment portfolios tailored to your risk tolerance and financial goals.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12" data-animation="fadeInUp" data-delay="0.4" data-duration="1.2">
+                    <div class="service-single-main-wrapper-five">
+                        <div class="icon service-icon-circle"><i class="fa-solid fa-users"></i></div>
+                        <div class="inner-content">
+                            <h5 class="title">Retirement Planning</h5>
+                            <p class="disc">Secure your future with comprehensive retirement plans and income projections.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Second row of services -->
+             <div class="row g-5 mt--10">
+                 <div class="col-lg-4 col-md-6 col-sm-12" data-animation="fadeInUp" data-delay="0.0" data-duration="1.2">
+                    <div class="service-single-main-wrapper-five">
+                        <div class="icon service-icon-circle"><i class="fa-solid fa-scale-balanced"></i></div>
+                        <div class="inner-content">
+                            <h5 class="title">Tax & Estate Planning</h5>
+                            <p class="disc">Strategies to minimize tax liabilities and ensure smooth asset transfer.</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-lg-4 col-md-6 col-sm-12" data-animation="fadeInUp" data-delay="0.2" data-duration="1.2">
+                    <div class="service-single-main-wrapper-five">
+                        <div class="icon service-icon-circle"><i class="fa-solid fa-shield-alt"></i></div>
+                        <div class="inner-content">
+                            <h5 class="title">Insurance Planning</h5>
+                            <p class="disc">Protect your assets and loved ones with tailored insurance solutions.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12" data-animation="fadeInUp" data-delay="0.4" data-duration="1.2">
+                    <div class="service-single-main-wrapper-five">
+                        <div class="icon service-icon-circle"><i class="fa-solid fa-bullseye-arrow"></i></div>
+                        <div class="inner-content">
+                            <h5 class="title">Financial Goal Setting</h5>
+                            <p class="disc">Define, plan, and achieve your financial aspirations with our support.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Services Section End -->
+
+
+    <!-- Main CTA Section (Dark Blue) -->
+    <div class="phidelis-cta-dark rts-section-gap" id="cta-main">
+        <div class="container">
+             <div class="row align-items-center">
+                 <div class="col-lg-7 text-center text-lg-start">
+                     <h2>"Let's Craft Your <br> Financial Future Together."</h2>
+                     <a href="#contact" class="rts-btn btn-primary">Schedule a Consultation</a>
+                 </div>
+                 <div class="col-lg-5 text-center mt-4 mt-lg-0">
+                      <!-- Placeholder for graphic -->
+                     <!-- <img src="assets/images/Iso Finance 1-01.png" alt="Financial Planning Illustration" style="max-width: 100%; max-height: 250px;"> -->
+                 </div>
+             </div>
+        </div>
+    </div>
+    <!-- Main CTA Section End -->
+
+
+    <!-- Content Section 1 (Light Blue - Bonsai) -->
+    <div class="phidelis-content-light rts-section-gap two-col-section" id="content-1">
+         <div class="container">
+            <div class="row align-items-center">
+                 <!-- Image Column -->
+                 <div class="col-lg-5">
+                      <img src="assets/images/Money Tree.H03.2k.png" alt="Money Tree" style="width: 100%; border-radius: 8px;">
+                 </div>
+                 <!-- Text Column -->
+                 <div class="col-lg-7 content-column">
+                     <h2>Nurturing Your Financial Growth</h2>
+                     <p>Just as a bonsai requires careful cultivation to thrive, your wealth needs expert guidance to flourish. Our approach combines time-tested strategies with innovative solutions to help your assets grow steadily and sustainably.</p>
+                     <p>We believe in the power of patient, disciplined investing - pruning when necessary, nurturing when beneficial, and always keeping the long-term vision in focus.</p>
+                 </div>
+            </div>
+        </div>
+    </div>
+     <!-- Content Section 1 End -->
+
+
+     <!-- Content Section 2 (Light Blue - Meeting) -->
+     <div class="phidelis-content-light rts-section-gap two-col-section" id="content-2">
+          <div class="container">
+             <div class="row align-items-center flex-row-reverse">
+                  <!-- Image Column -->
+                  <div class="col-lg-5">
+                       <img src="assets/images/Datadriven.png" alt="Client Meeting" style="width: 100%; border-radius: 8px;">
+                  </div>
+                  <!-- Text Column -->
+                  <div class="col-lg-7 content-column">
+                      <h2>Data-Driven Wealth Management</h2>
+                      <p>In today's complex financial landscape, success requires more than intuition - it demands precise analysis and strategic planning. Our team combines cutting-edge analytics with deep market expertise to chart your optimal financial course.</p>
+                      <p>We transform complex market data into clear, actionable insights, helping you make informed decisions with confidence and clarity.</p>
+                  </div>
+             </div>
+         </div>
+     </div>
+      <!-- Content Section 2 End -->
+
+
+      <!-- Content Section 3 (Light Blue - Coins Jar) -->
+      <div class="phidelis-content-light rts-section-gap two-col-section" id="content-3">
+           <div class="container">
+              <div class="row align-items-center">
+                   <!-- Image Column -->
+                   <div class="col-lg-5">
+                        <img src="assets/images/Finance Charts.H03.2k.png" alt="Growing Investments" style="width: 100%; border-radius: 8px;">
+                   </div>
+                   <!-- Text Column -->
+                   <div class="col-lg-7 content-column">
+                       <h2>Building Lasting Wealth</h2>
+                       <p>True wealth isn't just about accumulation - it's about creating lasting value that spans generations. Our comprehensive approach helps you build, protect, and transfer wealth while maintaining your core values and vision.</p>
+                       <p>From strategic asset allocation to legacy planning, we help you turn your financial goals into enduring realities.</p>
+                   </div>
+              </div>
+          </div>
+      </div>
+       <!-- Content Section 3 End -->
+
+
+    <!-- Products Section -->
+    <div class="rts-product-area rts-section-gap" id="products">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-style-five center">
+                        <h2 class="title">Products</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-5 mt--20 justify-content-center">
+                <!-- Product 1 -->
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="phidelis-product-card product-card-bg" style="background-image: url('assets/images/Investment portfolio.jpg');">
+                        <div class="product-card-overlay"></div>
+                        <div class="product-card-title">Investment Portfolios</div>
+                        <p class="product-card-desc">Diversified investment strategies tailored to your risk profile and financial goals</p>
+                    </div>
+                </div>
+                <!-- Product 2 -->
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="phidelis-product-card product-card-bg" style="background-image: url('assets/images/Insurance.jpg');">
+                        <div class="product-card-overlay"></div>
+                        <div class="product-card-title">Insurance Products</div>
+                        <p class="product-card-desc">Comprehensive protection solutions for your assets and loved ones</p>
+                    </div>
+                </div>
+                <!-- Product 3 -->
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="phidelis-product-card product-card-bg" style="background-image: url('assets/images/Wealth plans.jpg');">
+                        <div class="product-card-overlay"></div>
+                        <div class="product-card-title">Custom Wealth Plans</div>
+                        <p class="product-card-desc">Personalized financial roadmaps designed for long-term wealth creation</p>
+                    </div>
+                </div>
+                <!-- Product 4 -->
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="phidelis-product-card product-card-bg" style="background-image: url('assets/images/Wealth.jpg');">
+                        <div class="product-card-overlay"></div>
+                        <div class="product-card-title">Wealth Management</div>
+                        <p class="product-card-desc">Strategic wealth management solutions for multi-generational success</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Products Section End -->
+
+        <!-- about us area wrapper main -->
+        <div class="rts-breadcrumb-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="title-area-left center">
+                            <span class="bg-title">Our Team</span>
+                            <h1 class="title">
+                                Team Experts
+                            </h1>
+                            <p class="disc" style="max-width: 45%; margin: auto;">
+                                With a team of experienced professionals and a passion for innovation, we combine
+                                cutting-edge strategies
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="shape-area">
+                <!-- <img src="assets/images/about/shape/01.png" alt="shape" class="one">
+                <img src="assets/images/about/shape/02.png" alt="shape" class="two">
+                <img src="assets/images/about/shape/03.png" alt="shape" class="three"> -->
+            </div>
+        </div>
+        <!-- about us area wrapper main end -->
+
+    <div class="inner-page-team-area rts-section-gapBottom mt-dec-section-inner">
+        <div class="container pb--80">
+            <div class="row mt--30 g-5 g-sm-30 mb--80">
+                <div class="col-lg-4 col-md-6 col-sm-12 col-12" data-animation="fadeInUp" data-delay="0.2"
+                    data-duration="1.2">
+                    <div class="single-team-area-one-start">
+                        <a href="#" class="thumbnail">
+                            <img src="assets/images/team/01.webp" alt="team">
+                        </a>
+                        <div class="inner-content">
+                            <div class="text-top">
+                                <a href="#">
+                                    <h5 class="title">Kevin Martin</h5>
+                                </a>
+                                <span>Consultant</span>
+                            </div>
+                            <div class="social-one-wrapper">
+                                <ul>
+                                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 col-12" data-animation="fadeInUp" data-delay="0.4"
+                    data-duration="1.2">
+                    <div class="single-team-area-one-start">
+                        <a href="#" class="thumbnail">
+                            <img src="assets/images/team/02.webp" alt="team">
+                        </a>
+                        <div class="inner-content">
+                            <div class="text-top">
+                                <a href="#">
+                                    <h5 class="title">Kevin Martin</h5>
+                                </a>
+                                <span>Consultant</span>
+                            </div>
+                            <div class="social-one-wrapper">
+                                <ul>
+                                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 col-12" data-animation="fadeInUp" data-delay="0.6"
+                    data-duration="1.2">
+                    <div class="single-team-area-one-start">
+                        <a href="#" class="thumbnail">
+                            <img src="assets/images/team/03.webp" alt="team">
+                        </a>
+                        <div class="inner-content">
+                            <div class="text-top">
+                                <a href="#">
+                                    <h5 class="title">Kevin Martin</h5>
+                                </a>
+                                <span>Consultant</span>
+                            </div>
+                            <div class="social-one-wrapper">
+                                <ul>
+                                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt--30 g-5 g-sm-30">
+                <div class="col-lg-4 col-md-6 col-sm-12 col-12" data-animation="fadeInUp" data-delay="0.2"
+                    data-duration="1.2">
+                    <div class="single-team-area-one-start">
+                        <a href="#" class="thumbnail">
+                            <img src="assets/images/team/01.webp" alt="team">
+                        </a>
+                        <div class="inner-content">
+                            <div class="text-top">
+                                <a href="#">
+                                    <h5 class="title">Kevin Martin</h5>
+                                </a>
+                                <span>Consultant</span>
+                            </div>
+                            <div class="social-one-wrapper">
+                                <ul>
+                                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 col-12" data-animation="fadeInUp" data-delay="0.4"
+                    data-duration="1.2">
+                    <div class="single-team-area-one-start">
+                        <a href="#" class="thumbnail">
+                            <img src="assets/images/team/02.webp" alt="team">
+                        </a>
+                        <div class="inner-content">
+                            <div class="text-top">
+                                <a href="#">
+                                    <h5 class="title">Kevin Martin</h5>
+                                </a>
+                                <span>Consultant</span>
+                            </div>
+                            <div class="social-one-wrapper">
+                                <ul>
+                                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 col-12" data-animation="fadeInUp" data-delay="0.6"
+                    data-duration="1.2">
+                    <div class="single-team-area-one-start">
+                        <a href="#" class="thumbnail">
+                            <img src="assets/images/team/03.webp" alt="team">
+                        </a>
+                        <div class="inner-content">
+                            <div class="text-top">
+                                <a href="#">
+                                    <h5 class="title">Kevin Martin</h5>
+                                </a>
+                                <span>Consultant</span>
+                            </div>
+                            <div class="social-one-wrapper">
+                                <ul>
+                                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="rts-breadcrumb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-area-left center">
+                        <!-- <span class="bg-title">Contact</span> -->
+                        <h1 class="title rts-text-anime-style-1">
+                            Contact Us
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="shape-area">
+            <!-- <img src="assets/images/about/shape/01.png" alt="shape" class="one">
+            <img src="assets/images/about/shape/02.png" alt="shape" class="two">
+            <img src="assets/images/about/shape/03.png" alt="shape" class="three"> -->
+        </div>
+    </div>
+
+       <!-- contact areas main -->
+       <div class="rts-contact-area-in-page" data-animation="fadeInUp" data-delay="0.2">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4">
+                    <div class="contact-info-area-wrapper-p">
+                        <div class="single-contact-info">
+                            <div class="icon">
+                                <i class="fa-solid fa-phone-flip"></i>
+                            </div>
+                            <div class="info-wrapper">
+                                <span>Call Us 24/7</span>
+                                <a href="#">(+256) 2145.2156</a>
+                            </div>
+                        </div>
+                        <div class="single-contact-info">
+                            <div class="icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="info-wrapper">
+                                <span>Work with us</span>
+                                <a href="#">info@Invena.com</a>
+                            </div>
+                        </div>
+                        <div class="single-contact-info">
+                            <div class="icon">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="info-wrapper">
+                                <span>Our Location</span>
+                                <a href="#">125 Town, United State</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="thumbnail-contact-form">
+                        <img src="assets/images/contact/01.webp" alt="contact">
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="contact-form-p">
+                        <form class="form__content" method="post" action="mailer.php" id="contact-form">
+                            <h4 class="title">Get In Touch</h4>
+                            <input name="name" id="name" type="text" placeholder="Your Name">
+                            <input type="email" name="email" id="email" placeholder="Johndoe@gmail.com">
+                            <textarea name="message" id="message" placeholder="Message"></textarea>
+
+                            <div id="form-messages"></div>
+                            <button class="rts-btn btn-primary" type="submit">Get In Touch</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- contact areas main end -->
+
+    <!-- map area start -->
+    <div class="google-map-area rts-section-gapTop">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- <div class="google-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3248778.1226535137!2d-86.69566092360928!3d37.327475452900615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8842734c8b1953c9%3A0x771f6f4ec5ccdffc!2sKentucky%2C%20USA!5e0!3m2!1sen!2sbd!4v1741757435755!5m2!1sen!2sbd"
+                            width="600" height="600" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- map area end -->
+
+
+    <!-- Footer Section -->
+    <div class="rts-footer-area ptb--100 footer-two footer-bg-two" id="contact">
+        <div class="container">
+            <div class="row">
+                <!-- Column 1: Logo & Text -->
+                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="footer-two-single-wized left">
+                        <a href="index.html" class="footer-logo mb--20 d-block">
+                            <img src="assets/images/logo/phidelis_logo_placeholder.svg" alt="Phidelis Capital Logo" style="max-width: 150px;">
+                        </a>
+                        <p class="disc">
+                            Phidelis Capital delivers bespoke wealth management solutions, combining ethical principles with sophisticated financial strategies to help you achieve your long-term financial aspirations.
+                        </p>
+                    </div>
+                </div>
+                 <!-- Column 2: About Links -->
+                <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 col-12 mt_sm--50">
+                    <div class="footer-two-single-wized two">
+                        <div class="wized-title-area">
+                            <h5 class="wized-title">Links</h5>
+                            <img src="assets/images/footer/01.png" alt="footer deco">
+                        </div>
+                        <div class="wized-2-body">
+                            <ul>
+                                <li><a href="#about"><i class="fal fa-chevron-double-right"></i>About Us</a></li>
+                                <li><a href="#blog"><i class="fal fa-chevron-double-right"></i>Blog</a></li> <!-- Link needs target or removal -->
+                                <li><a href="#teams"><i class="fal fa-chevron-double-right"></i>Team</a></li> <!-- Link needs target or removal -->
+                                <li><a href="#"><i class="fal fa-chevron-double-right"></i>Career</a></li>
+                                <li><a href="#contact"><i class="fal fa-chevron-double-right"></i>Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Column 3: Company Links -->
+                <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 col-12 mt_sm--30 mt_md--30">
+                    <div class="footer-two-single-wized">
+                        <!-- <div class="wized-title-area">
+                            <h5 class="wized-title">Company</h5>
+                            <img src="assets/images/footer/01.png" alt="footer deco">
+                        </div>
+                        <div class="wized-2-body">
+                            <ul>
+                                <li><a href="#"><i class="fal fa-chevron-double-right"></i>Privacy</a></li>
+                                <li><a href="#"><i class="fal fa-chevron-double-right"></i>Support</a></li>
+                                <li><a href="#"><i class="fal fa-chevron-double-right"></i>Help Desk</a></li>
+                                <li><a href="#"><i class="fal fa-chevron-double-right"></i>FAQ</a></li>
+                            </ul>
+                        </div> -->
+                    </div>
+                </div>
+                <!-- Column 4: Newsletter -->
+                <!-- <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mt_sm--30 mt_md--30">
+                    <div class="footer-two-single-wized right">
+                        <div class="wized-title-area">
+                            <h5 class="wized-title">Subscribe our Newsletters</h5>
+                            <img src="assets/images/footer/01.png" alt="footer deco">
+                        </div>
+                         <div class="wized-2-body">
+                            <div class="newsletter-form-footer">
+                                <input type="email" placeholder="Your email">
+                                <button class="rts-btn btn-primary" style="background-color: #FFC107; border-color: #FFC107; color: #002366;">Subscribe</button>
+                            </div>
+                            <div class="social-wrapper-two menu mt--30">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright -->
+    <div class="rts-copy-right-1 ptb--30">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="copyright-h-2-wrapper text-center">
+                        <p class="disc">
+                            <i class="far fa-copyright"></i> Phidelis Capital 
+                            <script>document.write(new Date().getFullYear())</script>. All rights reserved.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Section End -->
+
+
+    <!-- Side Bar/Mobile Menu -->
+    <div id="side-bar" class="side-bar header-two">
+        <button class="close-icon-menu"><i class="far fa-times"></i></button>
+        <div class="rts-sidebar-menu-desktop">
+             <a class="logo-1" href="index.html"><img class="logo" src="assets/images/logo/phidelis_logo_placeholder.svg" alt="Phidelis Logo"></a>
+            <div class="body d-none d-xl-block">
+                <p class="disc">
+                    Placeholder text for the sidebar description area.
+                </p>
+                 <div class="get-in-touch">
+                    <div class="h6 title">Get In Touch</div>
+                    <div class="wrapper">
+                        <div class="single"><i class="fas fa-phone-alt"></i><a href="#">+123 456 7890</a></div>
+                        <div class="single"><i class="fas fa-envelope"></i><a href="mailto:info@phidelis.com">info@phidelis.com</a></div>
+                        <div class="single"><i class="fas fa-globe"></i><a href="#">www.phidelis.com</a></div>
+                        <div class="single"><i class="fas fa-map-marker-alt"></i><a href="#">Placeholder Address, SG</a></div>
+                    </div>
+                    <div class="social-wrapper-two menu">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-menu d-block d-xl-none">
+            <nav class="nav-main mainmenu-nav mt--30">
+                <ul class="mainmenu metismenu" id="mobile-menu-active">
+                    <li class="main-nav"> <a class="main" href="#home">Home</a> </li>
+                    <li class="main-nav"> <a class="main" href="#about">About us</a> </li>
+                    <li class="main-nav"> <a class="main" href="#service">Our Services</a> </li>
+                    <li class="main-nav"> <a class="main" href="#products">Products</a> </li>
+                    <li class="main-nav"> <a class="main" href="#contact">Contact</a> </li>
+                </ul>
+            </nav>
+            <div class="social-wrapper-one">
+                <ul>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Side Bar/Mobile Menu End -->
+
+
+    <!-- Search Popup -->
+    <div class="search-input-area">
+        <div class="container">
+            <div class="search-input-inner">
+                <div class="input-div">
+                    <input class="search-input autocomplete" type="text" placeholder="Search by keyword or #">
+                    <button><i class="far fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="close" class="search-close-icon"><i class="far fa-times"></i></div>
+    </div>
+    <!-- Search Popup End -->
+
+    <div id="anywhere-home" class="">
+    </div>
+
+    <!-- RTL/LTR Switcher -->
+    <!-- <div class="rtl-ltr-switcher-btn">
+        <span class="rtl show">View RTL</span>
+        <span class="ltr">View LTR</span>
+    </div> -->
+    <!-- RTL/LTR Switcher End -->
+
+    <!-- Progress Wrap -->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+                style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;">
+            </path>
+        </svg>
+    </div>
+    <!-- Progress Wrap End -->
+
+    <!-- Scripts -->
+    <script src="assets/js/plugins/jquery.js"></script>
+    <script src="assets/js/plugins/odometer.js"></script>
+    <script src="assets/js/plugins/jquery-appear.js"></script>
+    <script src="assets/js/plugins/gsap.js"></script>
+    <script src="assets/js/plugins/split-text.js"></script>
+    <script src="assets/js/plugins/scroll-trigger.js"></script>
+    <script src="assets/js/plugins/smooth-scroll.js"></script>
+    <script src="assets/js/plugins/metismenu.js"></script>
+    <script src="https://html.themewant.com/golfy/assets/js/plugins/magnific-popup.js"></script>
+    <script src="assets/js/vendor/bootstrap.min.js"></script>
+    <script src="assets/js/plugins/swiper.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
